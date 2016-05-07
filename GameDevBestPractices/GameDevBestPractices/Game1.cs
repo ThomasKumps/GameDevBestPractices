@@ -11,6 +11,8 @@ namespace GameDevBestPractices
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        ScreenManager screenManager;
+        int ScreenWidth, ScreenHeight;
 
         public Game1()
         {
@@ -27,6 +29,10 @@ namespace GameDevBestPractices
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            ScreenWidth = graphics.PreferredBackBufferWidth;
+            ScreenHeight = graphics.PreferredBackBufferHeight;
+
+            screenManager.Initialize(ScreenWidth, ScreenHeight);
 
             base.Initialize();
         }
